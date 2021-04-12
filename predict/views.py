@@ -6,4 +6,5 @@ from .ml_controller import ML_Controller
 # Create your views here.
 
 def home(request):
-    return render(request, 'predict/index.html', {})
+
+    return render(request, 'predict/home.html', {})

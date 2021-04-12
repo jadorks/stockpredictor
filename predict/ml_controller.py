@@ -72,9 +72,6 @@ class ML_Controller:
         predicted_prices = model.predict(x_test)
         predicted_prices = scaler.inverse_transform(predicted_prices)
 
-
-
-
         # Plot Test Predictions
         plt.plot(actual_prices, color="black", label=f"Actual {company} Price")
         plt.plot(predicted_prices, color="green", label=f"Predicted {company} Price")
@@ -83,7 +80,6 @@ class ML_Controller:
         plt.ylabel(f"{self.company} Share Price")
         plt.legend()
         plt.show()
-
 
         # Predict Next Day
         real_data = [model_inputs[len(model_inputs) + 1 - prediction_days:len(model_inputs + 1), 0]]

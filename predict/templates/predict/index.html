@@ -117,9 +117,45 @@
                     <div class="content-side">
                         <ul class="nav-main">
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_pages_dashboard.html">
-                                    <i class="nav-main-link-icon si si-speedometer"></i>
-                                    <span class="nav-main-link-name">Dashboard</span>
+                                <a class="nav-main-link" href="#">
+                                    <i class="nav-main-link-icon si si-arrow-right"></i>
+                                    <span class="nav-main-link-name">Home</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="#">
+                                    <i class="nav-main-link-icon si si-arrow-right"></i>
+                                    <span class="nav-main-link-name">FB</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="#">
+                                    <i class="nav-main-link-icon si si-arrow-right"></i>
+                                    <span class="nav-main-link-name">AAPL</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="#">
+                                    <i class="nav-main-link-icon si si-arrow-right"></i>
+                                    <span class="nav-main-link-name">AMZN</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="#">
+                                    <i class="nav-main-link-icon si si-arrow-right"></i>
+                                    <span class="nav-main-link-name">NFLX</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="#">
+                                    <i class="nav-main-link-icon si si-arrow-right"></i>
+                                    <span class="nav-main-link-name">GOOGL</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="#">
+                                    <i class="nav-main-link-icon si si-arrow-right"></i>
+                                    <span class="nav-main-link-name">TSLA</span>
                                 </a>
                             </li>
                             
@@ -175,47 +211,8 @@
 
             <!-- Main Container -->
             <main id="main-container">
-                <!-- Hero -->
-                <div class="bg-body-light">
-                    <div class="content content-full">
-                        <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
-                            <h1 class="flex-sm-fill h3 my-2">
-                                Blank (Block) <small class="d-block d-sm-inline-block mt-2 mt-sm-0 font-size-base font-w400 text-muted">That feeling of delight when you start your awesome new project!</small>
-                            </h1>
-                            <nav class="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">
-                                <ol class="breadcrumb breadcrumb-alt">
-                                    <li class="breadcrumb-item">Generic</li>
-                                    <li class="breadcrumb-item" aria-current="page">
-                                        <a class="link-fx" href="">Blank (Block)</a>
-                                    </li>
-                                </ol>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-                <!-- END Hero -->
-
-                <!-- Page Content -->
-                <div class="content">
-                    <!-- Your Block -->
-                    <div class="block block-rounded">
-                        <div class="block-header">
-                            <h3 class="block-title">
-                                Block Title
-                            </h3>
-                            <div class="block-options">
-                                <button type="button" class="btn-block-option">
-                                    <i class="si si-settings"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="block-content">
-                            <p>Your content..</p>
-                        </div>
-                    </div>
-                    <!-- END Your Block -->
-                </div>
-                <!-- END Page Content -->
+                {% block content %}
+                {% endblock %}
             </main>
             <!-- END Main Container -->
 
