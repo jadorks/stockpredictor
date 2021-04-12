@@ -4,4 +4,4 @@ from django.shortcuts import render
 # Create your views here.
 
 def home(request):
-    return HttpResponse('<p>Hello</p>')
+    return render(request, 'predict/index.html', {})
