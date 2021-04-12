@@ -30,10 +30,16 @@
         <!-- Fonts and OneUI framework -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
         <link rel="stylesheet" id="css-main" href="{% static 'css/oneui.min.css' %}">
+        
+        
+        <link rel="stylesheet" href="{% static 'css/loader.css' %}">
 
         <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
         <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/amethyst.min.css"> -->
         <!-- END Stylesheets -->
+
+        <!-- JQuery -->
+        <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
     </head>
     <body>
         <!-- Page Container -->
@@ -117,43 +123,43 @@
                     <div class="content-side">
                         <ul class="nav-main">
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="#">
+                                <a class="nav-main-link" href="{% url 'home' %}">
                                     <i class="nav-main-link-icon si si-arrow-right"></i>
                                     <span class="nav-main-link-name">Home</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="#">
+                                <a class="nav-main-link" href="{% url 'predictions' ticker='FB' %}">
                                     <i class="nav-main-link-icon si si-arrow-right"></i>
                                     <span class="nav-main-link-name">FB</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="#">
+                                <a class="nav-main-link" href="{% url 'predictions' ticker='AAPL' %}">
                                     <i class="nav-main-link-icon si si-arrow-right"></i>
                                     <span class="nav-main-link-name">AAPL</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="#">
+                                <a class="nav-main-link" href="{% url 'predictions' ticker='AMZN' %}">
                                     <i class="nav-main-link-icon si si-arrow-right"></i>
                                     <span class="nav-main-link-name">AMZN</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="#">
+                                <a class="nav-main-link" href="{% url 'predictions' ticker='NFLX' %}">
                                     <i class="nav-main-link-icon si si-arrow-right"></i>
                                     <span class="nav-main-link-name">NFLX</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="#">
+                                <a class="nav-main-link" href="{% url 'predictions' ticker='GOOGL' %}">
                                     <i class="nav-main-link-icon si si-arrow-right"></i>
                                     <span class="nav-main-link-name">GOOGL</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="#">
+                                <a class="nav-main-link" href="{% url 'predictions' ticker='TSLA' %}">
                                     <i class="nav-main-link-icon si si-arrow-right"></i>
                                     <span class="nav-main-link-name">TSLA</span>
                                 </a>
@@ -219,19 +225,17 @@
             <!-- Footer -->
             <footer id="page-footer" class="bg-body-light">
                 <div class="content py-3">
-                    <div class="row font-size-sm">
-                        <div class="col-sm-6 order-sm-2 py-1 text-center text-sm-right">
-                            Crafted with <i class="fa fa-heart text-danger"></i> by <a class="font-w600" href="https://1.envato.market/ydb" target="_blank">pixelcave</a>
-                        </div>
-                        <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-left">
-                            <a class="font-w600" href="https://1.envato.market/AVD6j" target="_blank">OneUI 4.9</a> &copy; <span data-toggle="year-copy"></span>
-                        </div>
-                    </div>
                 </div>
             </footer>
             <!-- END Footer -->
         </div>
         <!-- END Page Container -->
+
+        <script>
+            $(window).on("load",function(){
+              $(".loader-wrapper").fadeOut("slow");
+            });
+        </script>
 
         <!--
             OneUI JS Core

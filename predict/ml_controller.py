@@ -10,11 +10,14 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, LSTM
 from tensorflow.python.keras.saving.model_config import model_from_config
 
+import io
+import urllib, base64
+
 
 class ML_Controller:
     
     def __init__(self, company):
-        self.company = company
+        self.company = str(company)
 
     def magic(self):
         # Load Data
@@ -73,13 +76,19 @@ class ML_Controller:
         predicted_prices = scaler.inverse_transform(predicted_prices)
 
         # Plot Test Predictions
-        plt.plot(actual_prices, color="black", label=f"Actual {company} Price")
-        plt.plot(predicted_prices, color="green", label=f"Predicted {company} Price")
+        plt.plot(actual_prices, color="black", label=f"Actual {self.company} Price")
+        plt.plot(predicted_prices, color="green", label=f"Predicted {self.company} Price")
         plt.title(f"{self.company} Share Price")
         plt.xlabel("Time")
         plt.ylabel(f"{self.company} Share Price")
         plt.legend()
-        plt.show()
+        fig = plt.gcf()
+        buf = io.BytesIO()
+        fig.savefig(buf, format='png')
+        buf.seek(0)
+        string = base64.b64encode(buf.read())
+        uri = urllib.parse.quote(string)
+        plt.clf()
 
         # Predict Next Day
         real_data = [model_inputs[len(model_inputs) + 1 - prediction_days:len(model_inputs + 1), 0]]
@@ -88,4 +97,4 @@ class ML_Controller:
 
         prediction = model.predict(real_data)
         prediction = scaler.inverse_transform(prediction)
-        print(f"Prediction: {prediction}")
+        return prediction, uri
